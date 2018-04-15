@@ -1,12 +1,22 @@
 const express = require('express')
 const path = require('path')
-const favicon = require('serve-favicon');
+const logger = require('morgan');
+const bodyParser = require('body-parser');
+// const favicon = require('favicon');
+
+const app = express();
 const PORT = process.env.PORT || 5000
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .use(favicon(path.join(__dirname,'public','favicon.ico')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index2'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+// app.use(favicon(path.join(__dirname,'public','favicon.ico')));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+require('./server/routes')(app);
+
+app.get('/', (req, res) => res.render('pages/index2'));
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+module.exports = app;
