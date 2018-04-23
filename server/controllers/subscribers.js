@@ -1,15 +1,86 @@
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 const Subscriber = require('../models').Subscriber;
 
 module.exports = {
   create(req, res) {
     console.log(req.body)
     return Subscriber
-      .create({
-        email: req.body.email,
+    .findAll({
+      where: {
+        [Op.or]: [{email: req.body.email}, {phone: req.body.phone}]
+      }
+    })
+    .then(subscriber => {
+      console.log(subscriber.length)
+      console.log(subscriber)
+      if (subscriber.length != 0) {
+        return res.status(404).redirect('/existing_subscriber');
+      }
+      else {
+        return Subscriber
+          .create({
+            email: req.body.email,
+            phone: req.body.phone
+          })
+          .then(subscriber => res.status(201).redirect('/subscribe'))
+          .catch(error => res.status(400).send(error));
+      }
+    })
+    .catch(error => res.status(400).send(error));
+  },
+
+  createEmail(req, res) {
+    console.log(req.body)
+    return Subscriber
+    .findAll({
+      where: {
+        email: req.body.email
+      }
+    })
+    .then(subscriber => {
+      console.log(subscriber.length)
+      console.log(subscriber)
+      if (subscriber.length != 0) {
+        return res.status(404).redirect('/existing_subscriber');
+      }
+      else {
+        return Subscriber
+          .create({
+            email: req.body.email,
+          })
+          .then(subscriber => res.status(201).redirect('/subscribe'))
+          .catch(error => res.status(400).send(error));
+      }
+    })
+    .catch(error => res.status(400).send(error));
+  },
+
+  createPhone(req, res) {
+    console.log(req.body)
+    return Subscriber
+    .findAll({
+      where: {
         phone: req.body.phone
-      })
-      .then(subscriber => res.status(201).send(subscriber))
-      .catch(error => res.status(400).send(error));
+      }
+    })
+    .then(subscriber => {
+      console.log(subscriber.length)
+      console.log(subscriber)
+      if (subscriber.length != 0) {
+        return res.status(404).redirect('/existing_subscriber');
+      }
+      else {
+        return Subscriber
+          .create({
+            phone: req.body.phone
+          })
+          .then(subscriber => res.status(201).redirect('/subscribe'))
+          .catch(error => res.status(400).send(error));
+      }
+    })
+    .catch(error => res.status(400).send(error));
   },
 
   list(req, res) {

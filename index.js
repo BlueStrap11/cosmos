@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-// const favicon = require('favicon');
+// const favicon = require('serve-favicon');
 
 const app = express();
 const PORT = process.env.PORT || 5000
@@ -16,7 +16,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 require('./server/routes')(app);
 
-app.get('/', (req, res) => res.render('pages/index2'));
+app.get('/', (req, res) => res.render('pages/index'));
+app.get('/subscribe', (req, res) => res.render('pages/subscribe'));
+app.get('/existing_subscriber', (req, res) => res.render('pages/existing_subscriber'));
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 module.exports = app;

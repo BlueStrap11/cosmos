@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+  <script>
+    function ValidateEmail() {
+      var email = document.getElementById("email").value;
+      if (email != '') {
+        if (document.getElementById("email_check").checked) {
+          return true;
+        } else {
+          alert("Please select the checkbox");
+          return false;
+        }
+      } else {
+        alert("Enter email address");
+        return false;
+      }
+    }
+
+    function ValidatePhone() {
+      var phone = document.getElementById("phone").value;
+      if (phone != '') {
+        if (document.getElementById("phone_check").checked) {
+          if (phone.length == 10) {
+            return true;
+          } else {
+            alert("Enter a valid Contact Number");
+            return false;
+          }
+        } else {
+          alert("Please select the checkbox");
+          return false;
+        }
+      } else {
+        alert("Enter Mobile Number");
+        return false;
+      }
+    }
+
+    function ValidateBoth() {
+      var email = document.getElementById("email1").value;
+      var phone = document.getElementById("phone1").value;
+      if (email != '' && phone != '') {
+        if (document.getElementById("agreement").checked) {
+          if (phone) {
+            if (phone.length == 10) {
+              return true;
+            } else {
+              alert("Enter a valid Contact Number");
+              return false;
+            }
+          } else {
+            return true;
+          }
+        } else {
+          alert("Please select the checkbox");
+          return false;
+        }
+      } else {
+        alert("Enter email and mobile number");
+        return false;
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <% include ../partials/nav.ejs %>
+  
+  <div class="container">    
+    
+    <div id="subscribe_box" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+      <div class="panel panel-info" >
+        <div class="panel-heading">
+          <div class="panel-title">Subscribe</div>
+        </div>     
+        <div class="alert alert-danger">
+          <strong>Email or phone already registered. Please try again</strong>
+        </div>
+        <div style="padding-top:30px" class="panel-body" >
+          <form id="form" class="form-horizontal" role="form">
+            <div style="margin-top:10px" class="form-group">
+              <center>
+              <p>How would you like to subscribe?</p>
+              <div class="col-sm-12 controls">
+                <a id="btn-emaillogin" href="#" class="btn btn-primary" onClick="$('#subscribe_box').hide(); $('#emailbox').show()"><i class="glyphicon glyphicon-envelope" style="padding-right:8px"></i>Email  </a>
+                <a id="btn-fblogin" href="#" class="btn btn-warning" onClick="$('#subscribe_box').hide(); $('#phonebox').show()"><i class="glyphicon glyphicon-phone" style="padding-right:5px"></i>Text Message</a>
+                <a id="btn-login" href="#" class="btn btn-success" onClick="$('#subscribe_box').hide(); $('#bothbox').show()">Both</a>
+              </div>
+            </center>
+            </div>   
+          </form>     
+        </div>
+      </div>  
+    </div>
+
+    <div id="emailbox" style="display:none; margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+      <div class="panel panel-info" >
+        <div class="panel-heading">
+          <div class="panel-title">Subscribe</div>
+          <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#" onClick="$('#emailbox').hide(); $('#subscribe_box').show()">Choose another method</a></div>
+        </div>     
+        <div style="padding-top:30px" class="panel-body" >
+          <form id="email_form" class="form-horizontal" role="form" action="/api/emailsubscribers" method="post" onsubmit="return ValidateEmail()">                        
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+              <input id="email" type="email" class="form-control" name="email" placeholder="Enter Email Addresss">
+            </div>
+            <small class="form-text text-muted">We'll never share your details with anyone else.</small>
+            <div class="input-group">
+              <div class="checkbox">
+                <label>
+                  <input id="email_check" type="checkbox"> I agree to receive promotional messages from Cosmos Jaipur
+                </label>
+              </div>
+            </div>
+            <div style="margin-top:10px" class="form-group">
+              <div class="col-sm-12 controls">
+                <button type="submit" class="btn btn-success">Submit</button>
+              </div>
+            </div> 
+          </form>     
+        </div>
+      </div>  
+    </div>
+
+    <div id="phonebox" style="display:none; margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+      <div class="panel panel-info" >
+        <div class="panel-heading">
+          <div class="panel-title">Subscribe</div>
+          <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#" onClick="$('#phonebox').hide(); $('#subscribe_box').show()">Choose another method</a></div>
+        </div>     
+        <div style="padding-top:30px" class="panel-body" >
+            <form id="phone_form" class="form-horizontal" role="form" action="/api/phonesubscribers" method="post" onsubmit="return ValidatePhone()">                        
+              <div style="margin-bottom: 25px" class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                <input id="phone" type="number" class="form-control" name="phone" placeholder="Enter Mobile Number">
+              </div>
+              <small class="form-text text-muted">We'll never share your details with anyone else.</small>
+              <div class="input-group">
+                <div class="checkbox">
+                  <label>
+                    <input id="phone_check" type="checkbox"> I agree to receive promotional messages from Cosmos Jaipur
+                  </label>
+                </div>
+              </div>
+              <div style="margin-top:10px" class="form-group">
+                <div class="col-sm-12 controls">
+                  <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+              </div>  
+            </form>     
+          </div>
+        </div>  
+      </div>
+      
+      <div id="bothbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title">Subscribe</div>
+            <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#" onClick="$('#bothbox').hide(); $('#subscribe_box').show()">Choose another method</a></div>
+          </div>  
+          <div class="panel-body" >
+            <form id="form" class="form-horizontal" role="form" action="/api/subscribers" method="post" onsubmit="return ValidateBoth()">
+              <div style="margin-bottom: 25px" class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input id="email1" type="email" class="form-control" name="email" placeholder="Enter Email Addresss">
+              </div>     
+              <div style="margin-bottom: 25px" class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                <input id="phone1" type="number" class="form-control" name="phone" placeholder="Enter Mobile Number">
+              </div>     
+              <small class="form-text text-muted">We'll never share your details with anyone else.</small>
+              <div class="input-group">
+                <div class="checkbox">
+                  <label>
+                    <input id="agreement" type="checkbox"> I agree to receive promotional messages from Cosmos Jaipur
+                  </label>
+                </div>
+              </div>
+              <div style="margin-top:10px" class="form-group">
+                <div class="col-sm-12 controls">
+                  <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+              </div> 
+            </form>
+          </div>
+        </div>
+      </div> 
+    
+    </div>
+    
+    <% include ../partials/footer.ejs %>
+  </body>
+</html>
