@@ -1,7 +1,37 @@
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
+const AWS = require('aws-sdk');
+AWS.config.update({region: SES_REGION});
+
 const Subscriber = require('../models').Subscriber;
+
+WelcomeEmailData = function(subscriber) {
+  return emailBody = {
+    Destination: {
+      CcAddresses: [
+      ],
+      ToAddresses: [
+        subscriber.email,
+      ]
+    },
+    Source: SOURCE_EMAIL,
+    Template: 'template1',
+    TemplateData: "{ \"name\":\"User\"}",
+    ReplyToAddresses: [
+        SOURCE_EMAIL,
+    ],
+  }; 
+}
+
+SendWelcomeEmail = function(emailBody) {
+  var sendEmail = new AWS.SES().sendTemplatedEmail(emailBody).promise();
+  sendEmail.then(data => {
+    console.log(data);
+    }).catch(err => {
+      console.error(err, err.stack);
+    });
+}
 
 module.exports = {
   create(req, res) {
@@ -13,8 +43,6 @@ module.exports = {
       }
     })
     .then(subscriber => {
-      console.log(subscriber.length)
-      console.log(subscriber)
       if (subscriber.length != 0) {
         return res.status(404).redirect('/existing_subscriber');
       }
@@ -24,11 +52,15 @@ module.exports = {
             email: req.body.email,
             phone: req.body.phone
           })
-          .then(subscriber => res.status(201).redirect('/subscribe'))
-          .catch(error => res.status(400).send(error));
+          .then(subscriber => {
+            var emailBody = WelcomeEmailData(subscriber);
+            SendWelcomeEmail(emailBody);
+            res.status(201).redirect('/thanks')
+          })
+          .catch(error => res.status(400).send(error.stack));
       }
     })
-    .catch(error => res.status(400).send(error));
+    .catch(error => res.status(400).send(error.stack));
   },
 
   createEmail(req, res) {
@@ -40,8 +72,6 @@ module.exports = {
       }
     })
     .then(subscriber => {
-      console.log(subscriber.length)
-      console.log(subscriber)
       if (subscriber.length != 0) {
         return res.status(404).redirect('/existing_subscriber');
       }
@@ -50,11 +80,19 @@ module.exports = {
           .create({
             email: req.body.email,
           })
-          .then(subscriber => res.status(201).redirect('/subscribe'))
-          .catch(error => res.status(400).send(error));
+          .then(subscriber => {
+            var emailBody = WelcomeEmailData(subscriber);
+            SendWelcomeEmail(emailBody);
+            res.status(201).redirect('/thanks')
+          })
+          .catch(error => {
+            res.status(400).send(error.stack)
+          });
       }
     })
-    .catch(error => res.status(400).send(error));
+    .catch(error => {
+      res.status(400).send(error.stack)
+    });
   },
 
   createPhone(req, res) {
@@ -66,8 +104,6 @@ module.exports = {
       }
     })
     .then(subscriber => {
-      console.log(subscriber.length)
-      console.log(subscriber)
       if (subscriber.length != 0) {
         return res.status(404).redirect('/existing_subscriber');
       }
@@ -76,11 +112,11 @@ module.exports = {
           .create({
             phone: req.body.phone
           })
-          .then(subscriber => res.status(201).redirect('/subscribe'))
-          .catch(error => res.status(400).send(error));
+          .then(subscriber => res.status(201).redirect('/thanks'))
+          .catch(error => res.status(400).send(error.stack));
       }
     })
-    .catch(error => res.status(400).send(error));
+    .catch(error => res.status(400).send(error.stack));
   },
 
   list(req, res) {
