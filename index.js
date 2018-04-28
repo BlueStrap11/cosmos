@@ -19,6 +19,7 @@ require('./server/routes')(app);
 app.get('/', (req, res) => res.render('pages/index'));
 app.get('/subscribe', (req, res) => res.render('pages/subscribe'));
 app.get('/existing_subscriber', (req, res) => res.render('pages/existing_subscriber'));
+app.get('/thanks', (req, res) => res.render('pages/thank_you'));
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 module.exports = app;
