@@ -1,0 +1,461 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Cosmos Jaipur</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- animate min css -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- please register and switch the goole map api key to your own-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJqiG0aHr760nuzJd9Ycy7BSyCn6c3eZQ"></script>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+    <div class="hero">
+      <div class="wrap">
+        <nav>
+          <div class="navi">
+          <a href="#" class="toggle">Menu</a>
+          <ul>
+              <li><a href="#menu" class="smooth"><i class="fa fa-cutlery" aria-hidden="true"></i>Menu</a></li>
+              <li><a href="#events" class="smooth"><i class="fa fa-music" aria-hidden="true"></i>
+Events</a></li>
+              <li><a href="#about" class="smooth"><i class="fa fa-info" aria-hidden="true"></i>About</a></li>
+              <li><a href="#map" class="smooth"><i class="fa fa-map-marker" aria-hidden="true"></i>Visit Us</a></li>
+          </ul>
+          <a class="logo" href="index.html"><img src="img/logo-light.svg"></a>
+          </div>
+        </nav>
+        <div class="heading">
+          <h2 class="wow fadeInRight" data-wow-delay="1s">WELCOME TO CAFE COSMOS JAIPUR</h2>
+          <p class="wow fadeInRight" data-wow-delay="1s">Pok pok semiotics normcore iPhone austin waistcoat poke.<br> Poke polaroid roof party authentic ethical chambray<br> sustainable flannel microdosing.</p>
+          <a href="/subscribe" class="btn-main smooth wow fadeInUp" data-wow-delay="1s">SUBSCRIBE</a>
+        </div>
+      </div>
+    </div>
+    
+    <section class="light parallax" id="menu">
+      <div class="wrap menu">
+        <h2 class="brn">Menu</h2>
+        <ul class="filter">
+          <li><a href="#mansarovar" class="active" onClick="$('#rajapark_menu').hide(); $('#mansarovar_menu').show();$('#main').show()">Mansarovar</a></li>
+          <li><a href="#rajapark" onClick="$('#mansarovar_menu').hide(); $('#rajapark_menu').show()">Raja Park</a></li>
+        </ul>
+
+        <div id="mansarovar_menu" class="menu-card wow fadeInUp">
+          <ul class="filter wow fadeInUp">
+            <li><a href="#main" class="active">Main 1</a></li>
+            <li><a href="#desserts">Desserts 1</a></li>
+            <li><a href="#drinks">Drinks 1</a></li>
+            <li><a href="#snacks">Snacks 1</a></li>
+          </ul>
+
+          <div id="main" class="card">
+            <div class="full main">
+              <h3>Main 1</h3>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Main Burger 1<span class="price">$15</span></li>
+                <li>Main Burger 1<span class="price">$15</span></li>
+              </ul>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Main Burger 1<span class="price">$15</span></li>
+                <li>Main Burger 1<span class="price">$15</span></li>
+              </ul>
+            </div>
+          </div> 
+            
+          <div id="desserts" class="card hidden">
+            <div class="full desserts">
+              <h3>Desserts 1</h3>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Tasty Dessert 1<span class="price">$9</span></li>
+                <li>Tasty Dessert 1<span class="price">$9</span></li>
+              </ul>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Tasty Dessert 1<span class="price">$9</span></li>
+                <li>Tasty Dessert 1<span class="price">$9</span></li>
+              </ul>
+            </div>
+          </div> 
+            
+          <div id="drinks" class="card hidden">
+            <div class="full drinks">
+                <h3>Drinks 1</h3>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Craft Beer 1<span class="price">$7</span></li>
+                <li>Craft Beer 1<span class="price">$7</span></li>
+              </ul>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Craft Beer 1<span class="price">$7</span></li>
+                <li>Craft Beer 1<span class="price">$7</span></li>
+              </ul>
+            </div>
+          </div> 
+
+          <div id="snacks" class="card hidden">
+            <div class="full snacks">
+                <h3>Snacks 1</h3>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Snack 1<span class="price">$7</span></li>
+                <li>Snack 1<span class="price">$7</span></li>
+              </ul>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Snack 1<span class="price">$7</span></li>
+                <li>Snack 1<span class="price">$7</span></li>
+              </ul>
+            </div>
+          </div> 
+        </div>
+
+        <div id="rajapark_menu" class="menu-card wow fadeInUp" style="display: none">
+          <ul class="filter wow fadeInUp">
+            <li><a href="#main" class="active">Main 2</a></li>
+            <li><a href="#desserts">Desserts 2</a></li>
+            <li><a href="#drinks">Drinks 2</a></li>
+            <li><a href="#snacks">Snacks 2</a></li>
+          </ul>
+
+          
+          <div id="main" class="card">
+            <div class="full main">
+              <h3>Main 1</h3>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Main Burger 1<span class="price">$15</span></li>
+                <li>Main Burger 1<span class="price">$15</span></li>
+              </ul>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Main Burger 1<span class="price">$15</span></li>
+                <li>Main Burger 1<span class="price">$15</span></li>
+              </ul>
+            </div>
+          </div> 
+            
+          <div id="desserts" class="card hidden">
+            <div class="full desserts">
+              <h3>Desserts 1</h3>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Tasty Dessert 1<span class="price">$9</span></li>
+                <li>Tasty Dessert 1<span class="price">$9</span></li>
+              </ul>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Tasty Dessert 1<span class="price">$9</span></li>
+                <li>Tasty Dessert 1<span class="price">$9</span></li>
+              </ul>
+            </div>
+          </div> 
+            
+          <div id="drinks" class="card hidden">
+            <div class="full drinks">
+                <h3>Drinks 1</h3>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Craft Beer 1<span class="price">$7</span></li>
+                <li>Craft Beer 1<span class="price">$7</span></li>
+              </ul>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Craft Beer 1<span class="price">$7</span></li>
+                <li>Craft Beer 1<span class="price">$7</span></li>
+              </ul>
+            </div>
+          </div> 
+
+          <div id="snacks" class="card hidden">
+            <div class="full snacks">
+                <h3>Snacks 1</h3>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Snack 1<span class="price">$7</span></li>
+                <li>Snack 1<span class="price">$7</span></li>
+              </ul>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Snack 1<span class="price">$7</span></li>
+                <li>Snack 1<span class="price">$7</span></li>
+              </ul>
+            </div>
+          </div> 
+        </div> 
+
+
+        <!-- <div id="rajapark_menu" class="menu-card" style="display: none">
+          <ul class="filter2">
+            <li><a href="#main" class="active" onClick="$('#desserts2').hide();$('#drinks2').hide();$('#snacks2').hide();$('#main2').show()">Main 2</a></li>
+            <li><a href="#desserts" onClick="$('#main2').hide();$('#drinks2').hide();$('#snacks2').hide();$('#desserts2').show()">Desserts 2</a></li>
+            <li><a href="#drinks" onClick="$('#main2').hide();$('#desserts2').hide();$('#snacks2').hide(); $('#drinks2').show()">Drinks 2</a></li>
+            <li><a href="#snacks" onClick="$('#main2').hide();$('#desserts2').hide();$('#drinks2').hide(); $('#snacks2').show()">Snacks 2</a></li>
+          </ul>
+
+          <div id="main2" class="card">
+            <div class="full main">
+              <h3>Main 2</h3>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Main Burger 2<span class="price">$15</span></li>
+                <li>Main Burger 2<span class="price">$15</span></li>
+              </ul>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Main Burger 2<span class="price">$15</span></li>
+                <li>Main Burger 2<span class="price">$15</span></li>
+              </ul>
+            </div>
+          </div> 
+            
+          <div id="desserts2" class="card hidden">
+            <div class="full desserts">
+              <h3>Desserts 2</h3>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Tasty Dessert 2<span class="price">$9</span></li>
+                <li>Tasty Dessert 2<span class="price">$9</span></li>
+              </ul>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Tasty Dessert 2<span class="price">$9</span></li>
+                <li>Tasty Dessert 2<span class="price">$9</span></li>
+              </ul>
+            </div>
+          </div> 
+           
+          <div id="drinks2" class="card hidden">
+            <div class="full drinks">
+                <h3>Drinks 2</h3>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Craft Beer 2<span class="price">$7</span></li>
+                <li>Craft Beer 2<span class="price">$7</span></li>
+              </ul>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Craft Beer 2<span class="price">$7</span></li>
+                <li>Craft Beer 2<span class="price">$7</span></li>
+              </ul>
+            </div>
+          </div> 
+
+          <div id="snacks2" class="card hidden">
+            <div class="full snacks">
+                <h3>Snacks 2</h3>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Snack 2<span class="price">$7</span></li>
+                <li>Snack 2<span class="price">$7</span></li>
+              </ul>
+            </div>
+            <div class="half">
+              <ul>
+                <li>Snack 2<span class="price">$7</span></li>
+                <li>Snack 2<span class="price">$7</span></li>
+              </ul>
+            </div>
+          </div> 
+        </div>  -->
+
+
+      </div> <!-- Wrapper end -->
+    </section> <!-- Menu section end -->
+
+    <section class="dark" id="events">
+      <div class="wrap">
+        <h2 class="ylw wow fadeInRight">Events</h2>
+        <div class="evnt-calendar">
+          <div class="scroll wow fadeInUp">
+          <!-- first artist -->
+            <div class="evt">
+              <div class="third">
+                <img src="img/event1.jpg">
+              </div>
+              <div class="two-third">
+                <h3 class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i>Dec 28th<span>Entrance: 8PM~</span></h3>
+                <p>Vice heirloom normcore, green juice twee gentrify lomo. Keytar meh tattooed lo-fi tacos chartreuse try-hard. Hammock beard messenger bag pitchfork quinoa enamel pin post-ironic church-key bespoke swag thundercats lo-fi. </p>
+                <a href="#" class="btn-main">Learn more</a>
+              </div>
+            </div> <!-- artist end -->
+            <div class="evt">
+              <div class="third">
+                <img src="img/event2.jpg">
+              </div>
+              <div class="two-third">
+                <h3 class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i>Dec 31st<span>Entrance: 6PM~</span></h3>
+                <p>Vice heirloom normcore, green juice twee gentrify lomo. Keytar meh tattooed lo-fi tacos chartreuse try-hard. Hammock beard messenger bag pitchfork quinoa enamel pin post-ironic church-key bespoke swag thundercats lo-fi. </p>
+                <a href="#" class="btn-main">Learn more</a>
+              </div>
+            </div> <!-- artist end -->
+            <div class="evt">
+              <div class="third">
+                <img src="img/event3.jpg">
+              </div>
+              <div class="two-third">
+                <h3 class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i>Jan 1st<span>Entrance: 7:30PM~</span></h3>
+                <p>Vice heirloom normcore, green juice twee gentrify lomo. Keytar meh tattooed lo-fi tacos chartreuse try-hard. Hammock beard messenger bag pitchfork quinoa enamel pin post-ironic church-key bespoke swag thundercats lo-fi. </p>
+                <a href="#" class="btn-main">Learn more</a>
+              </div>
+            </div> <!-- artist end -->
+          </div> <!-- scroll end -->
+          <div class="full wow fadeInUp">
+            <div class="arrows">
+              <a href="#" id="prev" class="left"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+              <a href="#" id="next" class="right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            </div>
+            <ul class="handlers">
+              <li><a class="active" href="#artist1"></a></li>
+              <li><a href="#artist2"></a></li>
+              <li><a href="#artist3"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="light parallax" id="about">
+      <div class="wrap about">
+        <div class="two-third  wow fadeInLeft">
+          <h2 class="brn sngl">About</h2>
+          <h5 class="ylw">Intelligentsia paleo cliche art party shaman. </h5>
+          <p>Stumptown copper mug lyft offal, VHS occupy bicycle rights hashtag squid raclette. Aesthetic chillwave cold-pressed kitsch fashion axe plaid. Seitan taiyaki fam mixtape meh edison bulb hella 90's 3 wolf moon helvetica umami quinoa vaporware. </p>
+          <p class="tel"><i class="fa fa-phone" aria-hidden="true"></i>010-2345-6789</p>
+        </div>
+        <div class="third wow fadeInRight">
+            <img src="img/cheff.jpg">
+        </div>
+      </div>
+    </section>
+    <!-- happy hour -->
+    <section class="hppy-hr parallax">
+      <div class="wrap">
+        <h2 class="ylw wow fadeInRight">Happy Hour</h2>
+        <small class="wow fadeInLeft">Mon.-Fri.  17:30-19:00</small>
+        <div class="submenu wow fadeInUp">
+          <div class="half">
+            <ul>
+              <li>Draft Beer<span class="price">$5</span></li>
+              <li>Draft Beer<span class="price">$5</span></li>
+              <li>Draft Beer<span class="price">$5</span></li>
+              <li>Draft Beer<span class="price">$5</span></li>
+            </ul>
+          </div>
+          <div class="half">
+              <ul>
+                <li>Draft Beer<span class="price">$5</span></li>
+                <li>Draft Beer<span class="price">$5</span></li>
+                <li>Draft Beer<span class="price">$5</span></li>
+                <li>Draft Beer<span class="price">$5</span></li>
+              </ul>
+          </div> 
+        </div>
+      </div>
+    </section>
+    <!-- Map -->
+    <div id="map" class="wow fadeIn"></div>
+    <!-- Contact -->
+    
+    <section class="contact wow fadeIn">
+      <div class="half">
+        <ul class="location">
+          <li><a style="background-color: #f6bc13;color: #fff">Mansarovar</a></li>
+        </ul>
+        <div id="location1">
+          <ul class="info">
+            <li><i class="fa fa-phone" aria-hidden="true"></i>094140 51795</li>
+            <li><i class="fa fa-envelope" aria-hidden="true"></i>cosmosjaipur@gmail.com</li>
+            <li><i class="fa fa-map-marker" aria-hidden="true"></i>124/13 near IIIM Mansarovar<br>Jaipur, Rajasthan 302020</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="half">
+        <ul class="location">
+          <li><a style="background-color: #f6bc13;color: #fff">Raja Park</a></li>
+        </ul>
+        <div id="location2">
+          <ul class="info">
+            <li><i class="fa fa-phone" aria-hidden="true"></i>091161 01313</li>
+            <li><i class="fa fa-envelope" aria-hidden="true"></i>cosmosjaipur@gmail.com</li>
+            <li><i class="fa fa-map-marker" aria-hidden="true"></i>220, Dhruv Marg, Gurunanakpura<br>Tilak Nagar, Jaipur, Rajasthan 302004</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact wow fadeIn">
+      <div class="wrap subscribe">
+        <div class="half">
+          <form role="form">
+          <h2 class="ylw sngl">Subscribe for updates</h2>
+          <input type="text" placeholder="Your name" required="required">
+          <input type="email" placeholder="email@email.com" required="required">
+          <input type="submit" val="Subscribe">
+          </form>
+        </div>
+        <div class="half">
+          <center>
+            <h2 class="ylw sngl">Our Message Partner</h2>
+            <a href="https://msg91.com/startups/?utm_source=startup-banner"><img src="https://msg91.com/images/startups/msg91Badge.png" width="120" height="90" title="MSG91 - SMS for Startups" alt="Bulk SMS - MSG91" style="margin-top: 15px"></a>
+          </center>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <footer class="wow fadeIn">
+      <copy>Copyright @ Cafe Cosmos Jaipur 2016.</copy>
+      <ul class="social">
+        <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+        <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      </ul>
+    </footer>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/main.js"></script>
+    <!-- initialize wow -->
+    <script src="js/wow.min.js"></script>
+    <script> new WOW().init(); </script>
+  </body>
+</html>

@@ -1,206 +1,114 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <% include ../partials/header.ejs %>
-  <script>
-    function ValidateEmail() {
-      var email = document.getElementById("email").value;
-      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-      if (email.match(mailformat)) {
-        if (document.getElementById("email_check").checked) {
-          return true;
-        } else {
-          alert("Please select the checkbox");
-          return false;
-        }
-      } else {
-        alert("Please enter a valid email address!");
-        document.getElementById("email").focus();
-        return false;
-      }
-    }
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Cosmos Jaipur</title>
+    <!-- <meta name="description" content=""> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <link rel="stylesheet" href="css/main.css">
 
-    function ValidatePhone() {
-      var phone = document.getElementById("phone").value;
-      if (phone != '') {
-        if (document.getElementById("phone_check").checked) {
-          if (phone.length == 10 && !'1234560'.includes(phone[0])) {
-            return true;
-          } else {
-            alert("Enter a valid Contact Number");
-            document.getElementById("phone").focus();
-            return false;
-          }
-        } else {
-          alert("Please select the checkbox");
-          return false;
-        }
-      } else {
-        alert("Enter Mobile Number");
-        document.getElementById("phone").focus();
-        return false;
-      }
-    }
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" /> -->
+    <!-- animate min css -->
+    <!-- <link rel="stylesheet" href="css/animate.min.css"> -->
+    <!-- <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
+    <!-- please register and switch the goole map api key to your own-->
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJqiG0aHr760nuzJd9Ycy7BSyCn6c3eZQ"></script> -->
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+    <div class="hero">
+      <div class="wrap">
+        <nav>
+          <div class="navi">
+          <a href="" class="toggle">Menu</a>
+          <ul>
+              <li><a href="/#menu" class="smooth"><i class="fa fa-cutlery" aria-hidden="true"></i>Menu</a></li>
+              <li><a href="/#events" class="smooth"><i class="fa fa-music" aria-hidden="true"></i>
+              Events</a></li>
+              <li><a href="/#about" class="smooth"><i class="fa fa-info" aria-hidden="true"></i>About</a></li>
+              <li><a href="/#map" class="smooth"><i class="fa fa-map-marker" aria-hidden="true"></i>Visit Us</a></li>
+          </ul>
+          <a class="logo" href="index.html"><img src="img/logo-light.svg"></a>
+          </div>
+        </nav>
+      </div>
+    </div>
 
-    function ValidateBoth() {
-      var email = document.getElementById("email1").value;
-      var phone = document.getElementById("phone1").value;
-      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-      if (email != '' && phone != '') {
-        if (document.getElementById("agreement").checked) {
-          if (email.match(mailformat)) {
-            if (phone.length == 10 && !'1234560'.includes(phone[0])) {
-              return true;
-            } else {
-              alert("Enter a valid Contact Number");
-              document.getElementById("phone1").focus();
-              return false;
-            }
-          } else {
-            alert("Please enter a valid email address!");
-            document.getElementById("email1").focus();
-            return false;
-          }
-        } else {
-          alert("Please select the checkbox");
-          return false;
-        }
-      } else {
-        alert("Enter Email and Mobile Number");
-        document.getElementById("email1").focus();
-        return false;
-      }
-    }
-  </script>
-
-</head>
-
-<body>
-  <% include ../partials/nav.ejs %>
-  
-  <div class="container">    
-    
-    <div id="subscribe_box" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-      <div class="panel panel-info" >
-        <div class="panel-heading">
-          <div class="panel-title">Subscribe</div>
-        </div>     
-        <!-- <div class="alert alert-success" >
-          <strong>Thank you for subscribing :)</strong>
-        </div> -->
-        <div style="padding-top:30px" class="panel-body" >
-          <form id="form" class="form-horizontal" role="form">
+    <section class="contact wow fadeIn">
+      <div class="wrap subscribe">
+        <h2 class="ylw sngl">Subscribe for updates</h2>
+        
+        <div id="subscribe_box" class="half">
+          <form id="form" class="" role="form">
             <div style="margin-top:10px" class="form-group">
               <center>
               <p>How would you like to subscribe?</p>
               <div class="col-sm-12 controls">
-                <a id="btn-emaillogin" href="#" class="btn btn-primary" onClick="$('#subscribe_box').hide(); $('#emailbox').show()"><i class="glyphicon glyphicon-envelope" style="padding-right:8px"></i>Email  </a>
-                <a id="btn-fblogin" href="#" class="btn btn-warning" onClick="$('#subscribe_box').hide(); $('#phonebox').show()"><i class="glyphicon glyphicon-phone" style="padding-right:5px"></i>Text Message</a>
-                <a id="btn-login" href="#" class="btn btn-success" onClick="$('#subscribe_box').hide(); $('#bothbox').show()">Both</a>
+                <a id="btn-emaillogin" href="#emailbox" class="btn btn-primary" onClick="$('#subscribe_box').hide(); $('#emailbox').show()"><i class="glyphicon glyphicon-envelope" style="padding-right:8px"></i>Email  </a>
+                <a id="btn-fblogin" href="#phonebox" class="btn btn-warning" onClick="$('#subscribe_box').hide(); $('#phonebox').show()"><i class="glyphicon glyphicon-phone" style="padding-right:5px"></i>Text Message</a>
+                <a id="btn-login" href="#bothbox" class="btn btn-success" onClick="$('#subscribe_box').hide(); $('#bothbox').show()">Both</a>
               </div>
             </center>
             </div>   
-          </form>     
+          </form>  
         </div>
-      </div>  
-    </div>
-
-    <div id="emailbox" style="display:none; margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-      <div class="panel panel-info" >
-        <div class="panel-heading">
-          <div class="panel-title">Subscribe</div>
-          <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#" onClick="$('#emailbox').hide(); $('#subscribe_box').show()">Choose another method</a></div>
-        </div>     
-        <div style="padding-top:30px" class="panel-body" >
-          <form id="email_form" class="form-horizontal" role="form" action="/api/emailsubscribers" method="post" onsubmit="return ValidateEmail()">                        
-            <div style="margin-bottom: 25px" class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-              <input id="email" type="email" class="form-control" name="email" placeholder="Enter Email Addresss">
-            </div>
-            <small class="form-text text-muted">We'll never share your details with anyone else.</small>
-            <div class="input-group">
-              <div class="checkbox">
-                <label>
-                  <input id="email_check" type="checkbox"> I agree to receive promotional messages from Cosmos Jaipur
-                </label>
-              </div>
-            </div>
-            <div style="margin-top:10px" class="form-group">
-              <div class="col-sm-12 controls">
-                <button type="submit" class="btn btn-success">Submit</button>
-              </div>
-            </div> 
-          </form>     
+        
+        <div id="emailbox" class="half" style="display:none;">
+          <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#subscribe_box" onClick="$('#emailbox').hide(); $('#subscribe_box').show()">Choose another method</a></div>
+          <form id="email_form" class="" role="form" action="/api/emailsubscribers" method="post" onsubmit="return ValidateEmail()">
+          <!-- <input type="text" placeholder="Your name" required="required"> -->
+            <input id="email" type="email" class="form-control" name="email" placeholder="Enter Email Addresss">
+            <small class="form-text text-muted">We'll never share your details with anyone else.</small><br>
+            <input id="email_check" type="checkbox"> I agree to receive promotional messages from Cosmos Jaipur
+            <input type="submit" val="Subscribe">
+          </form>
         </div>
-      </div>  
-    </div>
-
-    <div id="phonebox" style="display:none; margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-      <div class="panel panel-info" >
-        <div class="panel-heading">
-          <div class="panel-title">Subscribe</div>
-          <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#" onClick="$('#phonebox').hide(); $('#subscribe_box').show()">Choose another method</a></div>
-        </div>     
-        <div style="padding-top:30px" class="panel-body" >
-            <form id="phone_form" class="form-horizontal" role="form" action="/api/phonesubscribers" method="post" onsubmit="return ValidatePhone()">                        
-              <div style="margin-bottom: 25px" class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-                <input id="phone" type="number" class="form-control" name="phone" placeholder="Enter Mobile Number">
-              </div>
-              <small class="form-text text-muted">We'll never share your details with anyone else.</small>
-              <div class="input-group">
-                <div class="checkbox">
-                  <label>
-                    <input id="phone_check" type="checkbox"> I agree to receive promotional messages from Cosmos Jaipur
-                  </label>
-                </div>
-              </div>
-              <div style="margin-top:10px" class="form-group">
-                <div class="col-sm-12 controls">
-                  <button type="submit" class="btn btn-success">Submit</button>
-                </div>
-              </div>  
-            </form>     
-          </div>
-        </div>  
+        
+        <div id="phonebox" class="half" style="display:none;">
+          <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#subscribe_box" onClick="$('#phonebox').hide(); $('#subscribe_box').show()">Choose another method</a></div>
+          <form id="phone_form" class="" role="form" action="/api/phonesubscribers" method="post" onsubmit="return ValidatePhone()">
+          <!-- <input type="text" placeholder="Your name" required="required"> -->
+            <input id="phone" type="number" class="form-control" name="email" placeholder="Enter Mobile Number">
+            <small class="form-text text-muted">We'll never share your details with anyone else.</small><br>
+            <input id="phone_check" type="checkbox"> I agree to receive promotional messages from Cosmos Jaipur
+            <input type="submit" val="Subscribe">
+          </form>
+        </div>
+        
+        <div id="bothbox" class="half" style="display:none;">
+          <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#subscribe_box" onClick="$('#bothbox').hide(); $('#subscribe_box').show()">Choose another method</a></div>
+          <form id="form" class="" role="form" action="/api/subscribers" method="post" onsubmit="return ValidateBoth()">
+          <!-- <input type="text" placeholder="Your name" required="required"> -->
+            <input id="email" type="email" class="form-control" name="email" placeholder="Enter Email Addresss">
+            <input id="phone1" type="number" class="form-control" name="email" placeholder="Enter Mobile Number">
+            <small class="form-text text-muted">We'll never share your details with anyone else.</small><br>
+            <input id="agreement" type="checkbox"> I agree to receive promotional messages from Cosmos Jaipur
+            <input type="submit" val="Subscribe">
+          </form>
+        </div>
       </div>
-      
-      <div id="bothbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <div class="panel-title">Subscribe</div>
-            <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#" onClick="$('#bothbox').hide(); $('#subscribe_box').show()">Choose another method</a></div>
-          </div>  
-          <div class="panel-body" >
-            <form id="form" class="form-horizontal" role="form" action="/api/subscribers" method="post" onsubmit="return ValidateBoth()">
-              <div style="margin-bottom: 25px" class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                <input id="email1" type="email" class="form-control" name="email" placeholder="Enter Email Addresss">
-              </div>     
-              <div style="margin-bottom: 25px" class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-                <input id="phone1" type="number" class="form-control" name="phone" placeholder="Enter Mobile Number">
-              </div>     
-              <small class="form-text text-muted">We'll never share your details with anyone else.</small>
-              <div class="input-group">
-                <div class="checkbox">
-                  <label>
-                    <input id="agreement" type="checkbox"> I agree to receive promotional messages from Cosmos Jaipur
-                  </label>
-                </div>
-              </div>
-              <div style="margin-top:10px" class="form-group">
-                <div class="col-sm-12 controls">
-                  <button type="submit" class="btn btn-success">Submit</button>
-                </div>
-              </div> 
-            </form>
-          </div>
-        </div>
-      </div> 
-    
-    </div>
-    
-    <% include ../partials/footer.ejs %>
+    </section>
+
+    <footer class="wow fadeIn">
+      <copy>Copyright @ Cafe Cosmos Jaipur 2016.</copy>
+      <ul class="social">
+        <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+        <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      </ul>
+    </footer>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/main.js"></script>
+    <script src="js/validations.js"></script>
+    <!-- <script> new WOW().init(); </script> -->
   </body>
 </html>
