@@ -86,12 +86,14 @@ module.exports = {
             res.status(201).redirect('/thanks')
           })
           .catch(error => {
-            res.status(400).send(error.stack)
+            console.log(error.stack)
+            res.status(400).redirect('/errors/400')
           });
       }
     })
     .catch(error => {
-      res.status(400).send(error.stack)
+      console.log(error.stack)
+      res.status(400).redirect('/errors/400')
     });
   },
 

@@ -16,10 +16,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 require('./server/routes')(app);
 
-app.get('/', (req, res) => res.render('pages/index'));
+app.get('/', (req, res) => res.render('index'));
 app.get('/subscribe', (req, res) => res.render('pages/subscribe'));
 app.get('/existing_subscriber', (req, res) => res.render('pages/existing_subscriber'));
 app.get('/thanks', (req, res) => res.render('pages/thank_you'));
+app.get('/404', (req, res) => res.render('pages/errors/404'));
+app.get('*', (req, res) => res.render('pages/errors/404'));
+
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 module.exports = app;
