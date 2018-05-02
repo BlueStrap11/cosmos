@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/main.css">
     <!-- animate min css -->
     <link rel="stylesheet" href="css/animate.min.css">
@@ -35,12 +36,12 @@ Events</a></li>
               <li><a href="#team" class="smooth"><i class="fa fa-users" aria-hidden="true"></i>Our Team</a></li>
               <li><a href="#map" class="smooth"><i class="fa fa-map-marker" aria-hidden="true"></i>Visit Us</a></li>
           </ul>
-          <a class="logo" href="index.html"><img src="img/logo-light.svg"></a>
+          <a class="logo" href="index.html"><img src="img/image.jpg"></a>
           </div>
         </nav>
         <div class="heading">
           <h2 class="wow fadeInRight" data-wow-delay="1s">WELCOME TO CAFE COSMOS JAIPUR</h2>
-          <p class="wow fadeInRight" data-wow-delay="1s">Pok pok semiotics normcore iPhone austin waistcoat poke.<br> Poke polaroid roof party authentic ethical chambray<br> sustainable flannel microdosing.</p>
+          <p class="wow fadeInRight" data-wow-delay="1s">Write something cheeky here<br> for the introduction<br> and change photo</p>
           <a href="/subscribe" class="btn-main smooth wow fadeInUp" data-wow-delay="1s">SUBSCRIBE</a>
         </div>
       </div>
@@ -370,7 +371,7 @@ Events</a></li>
 
     <!-- Map -->
     <center>
-    <h2 class="light parallax brn sngl wow" style="padding-bottom: 20px;padding-top: 20px">Come Visit Us</h2></center>
+    <h2 class="light parallax brn sngl wow" style="padding-bottom: 20px;padding-top: 20px;margin-top: 0px;;margin-bottom: 0px;">Come Visit Us</h2></center>
     <section class="light parallax" id="map">
         <div class="wow fadeIn"></div>
     </section>
@@ -406,20 +407,23 @@ Events</a></li>
 
     <section class="contact wow fadeIn">
       <div class="wrap subscribe">
-        <div class="half">
-          <form role="form">
-          <h2 class="ylw sngl">Subscribe for updates</h2>
-          <input type="text" placeholder="Your name" required="required">
-          <input type="email" placeholder="email@email.com" required="required">
-          <input type="submit" val="Subscribe">
+        <h2 class="ylw sngl">Subscribe for updates</h2>
+        <div id="emailbox" class="half">
+          <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#subscribe_box" onClick="$('#emailbox').hide(); $('#subscribe_box').show()">Choose another method</a></div>
+          <form id="email_form" class="" role="form" action="/api/emailsubscribers" method="post" onsubmit="return ValidateEmail()">
+          <!-- <input type="text" placeholder="Your name" required="required"> -->
+            <input id="email" type="email" class="form-control" name="email" placeholder="Enter Email Addresss">
+            <small class="form-text text-muted">We'll never share your details with anyone else.</small><br>
+            <input id="email_check" type="checkbox"> I agree to receive promotional messages from Cosmos Jaipur
+            <input type="submit" val="Subscribe">
           </form>
         </div>
-        <div class="half">
+        <!-- <div class="half">
           <center>
             <h2 class="ylw sngl">Our Message Partner</h2>
             <a href="https://msg91.com/startups/?utm_source=startup-banner"><img src="https://msg91.com/images/startups/msg91Badge.png" width="120" height="90" title="MSG91 - SMS for Startups" alt="Bulk SMS - MSG91" style="margin-top: 15px"></a>
           </center>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -435,6 +439,7 @@ Events</a></li>
     <script src="js/main.js"></script>
     <!-- initialize wow -->
     <script src="js/wow.min.js"></script>
+    <script src="js/validations.js"></script>
     <script> new WOW().init(); </script>
   </body>
 </html>

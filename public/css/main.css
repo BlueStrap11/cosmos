@@ -1019,8 +1019,8 @@ h3 {
 .contact .subscribe input {
 	margin-top: 15px;
 	margin-right: 10px;
-	height: 36px;
-	width: 200px;
+	/*height: 36px;
+	width: 200px;*/
 	background-color: #ededed;
 	border: 0;
 	padding-left: 14px

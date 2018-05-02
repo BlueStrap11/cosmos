@@ -88,7 +88,7 @@ $(document).ready(function(){
                     zoom: 15,
 
                     // The latitude and longitude to center the map (always required)
-                    center: new google.maps.LatLng(26.894253, 75.821861), // Raja Park
+                    center: new google.maps.LatLng(26.8942357, 75.8229582), // Raja Park
 
                     // How you would like to style the map. 
                     // This is where you would paste any style found on Snazzy Maps.
@@ -104,7 +104,7 @@ $(document).ready(function(){
 
                 // Let's also add a marker while we're at it
                 var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(26.894253, 75.821861),
+                    position: new google.maps.LatLng(26.8942357, 75.8229582),
                     map: map,
                     title: 'Snazzy!'
                 });
