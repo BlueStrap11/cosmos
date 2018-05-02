@@ -685,7 +685,7 @@ h2.sngl:before {
 	background: linear-gradient(135deg, #1a131b 0%, #3a2524 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a131b', endColorstr='#3a2524', GradientType=1);
 	color: #fff;
-	padding: 8% 2%;
+	padding: 3% 2%;
 	overflow: hidden
 }
 
@@ -831,7 +831,7 @@ h2.sngl:before {
 }
 
 .about {
-	padding: 8% 2%
+	padding: 3% 2%
 }
 
 .about:after {
@@ -873,7 +873,7 @@ h2.sngl:before {
 	background: url("../img/happy-hour.jpg") center center no-repeat;
 	background-size: cover;
 	text-align: center;
-	padding: 8% 2%;
+	padding: 4% 2%;
 	color: #fff
 }
 
@@ -923,6 +923,70 @@ h2.sngl:before {
 .hppy-hr .submenu ul .price:before {
 	content: "...........    ";
 	color: #fff
+}
+
+/* Team Cards/
+
+/* Three columns side by side */
+.column {
+    float: left;
+    width: 23%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+h3 {
+	font-family: "Lobster"
+}
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+@media screen and (width: 768px) {
+    .column {
+        width: 22%;
+        display: block;
+    }
+}
+/* Add some shadows to create a card effect */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.container {
+    padding: 0 16px;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: grey;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
 }
 
 .parallax {
