@@ -1026,6 +1026,54 @@ h3 {
 	padding-left: 14px
 }
 
+.form-group a {
+	display: inline-block;
+	color: #f6bc13;
+	border-radius: 3px;
+	border: 1px #f6bc13 solid;
+	text-align: center;
+	font-size: 18px;
+    line-height: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 115px;
+    transition: all 300ms ease-in-out;
+}
+
+.form-group a:hover {
+    background-color: #f6bc13;
+    color: #fff;
+}
+
+.form-control input[type=email] {
+    width: 100%;
+    height: 34px;
+    font-size: 14px;
+}
+
+.form-control input[type=number] {
+    width: 100%;
+    height: 34px;
+    font-size: 14px;
+}
+
+.form-control a {
+    float: right;
+    text-decoration: none;
+    position: relative;
+    margin-top: -25px;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: 15px;
+    width: 50%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
 .contact .subscribe input[type=submit] {
 	display: block;
 	-webkit-border-radius: 3px;
