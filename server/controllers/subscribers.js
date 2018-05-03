@@ -1,8 +1,9 @@
+const config = require('config');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
 const AWS = require('aws-sdk');
-AWS.config.update({region: SES_REGION});
+AWS.config.update({accessKeyId: config.get('aws.accessKeyId'), secretAccessKey: config.get('aws.secretAccessKey'), region: config.get('aws.ses_region')});
 
 const Subscriber = require('../models').Subscriber;
 
@@ -15,11 +16,11 @@ WelcomeEmailData = function(subscriber) {
         subscriber.email,
       ]
     },
-    Source: SOURCE_EMAIL,
+    Source: config.get('email.sender'),
     Template: 'template1',
     TemplateData: "{ \"name\":\"User\"}",
     ReplyToAddresses: [
-        SOURCE_EMAIL,
+        config.get('email.sender'),
     ],
   }; 
 }
@@ -44,7 +45,7 @@ module.exports = {
     })
     .then(subscriber => {
       if (subscriber.length != 0) {
-        return res.status(404).redirect('/existing_subscriber');
+        return res.status(400).redirect('/existing_subscriber');
       }
       else {
         return Subscriber
@@ -57,10 +58,16 @@ module.exports = {
             SendWelcomeEmail(emailBody);
             res.status(201).redirect('/thanks')
           })
-          .catch(error => res.status(400).send(error.stack));
+          .catch(error => {
+            console.log(error.stack)
+            res.status(500).redirect('/errors/500')
+          });
       }
     })
-    .catch(error => res.status(400).send(error.stack));
+    .catch(error => {
+      console.log(error.stack)
+      res.status(500).redirect('/errors/500')
+    });
   },
 
   createEmail(req, res) {
@@ -73,7 +80,7 @@ module.exports = {
     })
     .then(subscriber => {
       if (subscriber.length != 0) {
-        return res.status(404).redirect('/existing_subscriber');
+        return res.status(400).redirect('/existing_subscriber');
       }
       else {
         return Subscriber
@@ -87,13 +94,13 @@ module.exports = {
           })
           .catch(error => {
             console.log(error.stack)
-            res.status(400).redirect('/errors/400')
+            res.status(500).redirect('/errors/500')
           });
       }
     })
     .catch(error => {
       console.log(error.stack)
-      res.status(400).redirect('/errors/400')
+      res.status(500).redirect('/errors/500')
     });
   },
 
@@ -107,7 +114,7 @@ module.exports = {
     })
     .then(subscriber => {
       if (subscriber.length != 0) {
-        return res.status(404).redirect('/existing_subscriber');
+        return res.status(400).redirect('/existing_subscriber');
       }
       else {
         return Subscriber
@@ -115,10 +122,16 @@ module.exports = {
             phone: req.body.phone
           })
           .then(subscriber => res.status(201).redirect('/thanks'))
-          .catch(error => res.status(400).send(error.stack));
+          .catch(error => {
+            console.log(error.stack)
+            res.status(500).redirect('/errors/500')
+          });
       }
     })
-    .catch(error => res.status(400).send(error.stack));
+    .catch(error => {
+      console.log(error.stack)
+      res.status(500).redirect('/errors/500')
+    });
   },
 
   list(req, res) {
