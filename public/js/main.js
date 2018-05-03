@@ -20,12 +20,30 @@ $(function() {
 
 $(document).ready(function(){
     // menu filter
-   $('.filter a').on('click', function(event){
+   $('.navigate a').on('click', function(event){
        event.preventDefault();
-       $('.filter a').removeClass('active');  
+       $('.navigate a').removeClass('active');  
+       $(this).addClass("active");
+       //var currentId = $(this).attr('href');
+       //$(".card").fadeOut(300);
+       //$(currentId).delay(300).fadeIn();
+   });
+
+   $('.navigate1 a').on('click', function(event){
+       event.preventDefault();
+       $('.navigate1 a').removeClass('active');  
        $(this).addClass("active");
        var currentId = $(this).attr('href');
-       $(".card").fadeOut(300);
+       $(".card1").fadeOut(300);
+       $(currentId).delay(300).fadeIn();
+   });
+
+   $('.navigate2 a').on('click', function(event){
+       event.preventDefault();
+       $('.navigate2 a').removeClass('active');  
+       $(this).addClass("active");
+       var currentId = $(this).attr('href');
+       $(".card2").fadeOut(300);
        $(currentId).delay(300).fadeIn();
    });
     

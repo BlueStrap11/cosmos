@@ -384,6 +384,14 @@ h2.sngl:before {
 	/*margin-top: 30px*/
 }
 
+.menu .filter3 {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 30px
+	/*margin-top: 30px*/
+}
+
 .menu .filter li {
 	display: inline-block
 }
