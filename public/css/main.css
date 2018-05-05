@@ -469,7 +469,6 @@ h2.sngl:before {
 .half .location li a {
 	display: block;
 	text-decoration: none;
-	color: #fff;
 	padding: 10px 40px;
 	font-weight: bold;
 	background-color: #fff;
@@ -534,7 +533,12 @@ h2.sngl:before {
 	}
 }
 
-.half .location li .active {
+.half .location1 li .active {
+	background-color: #f6bc13;
+	color: #fff
+}
+
+.half .location2 li .active {
 	background-color: #f6bc13;
 	color: #fff
 }
