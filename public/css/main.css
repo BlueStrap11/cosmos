@@ -1048,7 +1048,7 @@ h3 {
     line-height: 30px;
     text-transform: uppercase;
     text-decoration: none;
-    width: 115px;
+    width: 30%;
     transition: all 300ms ease-in-out;
 }
 
@@ -1070,10 +1070,15 @@ h3 {
 }
 
 .form-control a {
-    float: right;
     text-decoration: none;
     position: relative;
-    margin-top: -25px;
+}
+
+@media only screen and (min-width:790px) {
+	.form-control a {
+		float: right;
+		margin-top: -35px;
+	}
 }
 
 .alert-danger {
@@ -1100,6 +1105,7 @@ h3 {
 	text-transform: uppercase;
 	background-color: #fff;
 	width: 215px;
+	margin-bottom: 10px;
 	-webkit-transition: all 300ms ease-in-out;
 	-moz-transition: all 300ms ease-in-out;
 	-ms-transition: all 300ms ease-in-out;
@@ -1285,7 +1291,7 @@ nav .logo img {
 	nav ul li {
 		margin-left: 0;
 		text-align: center;
-		width: 23.9%;
+		width: 19%;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 		line-height: 30px
