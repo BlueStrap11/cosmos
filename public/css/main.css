@@ -265,7 +265,8 @@ h2 {
 	margin: 0;
 	font-family: "Lobster", sans-serif;
 	font-size: 26px;
-	font-weight: 400
+	font-weight: 400;
+	margin-bottom: 20px;
 }
 
 @media only screen and (max-width:768px) {
@@ -364,7 +365,7 @@ h2.sngl:before {
 }
 
 .menu {
-	padding: 8% 2%;
+	padding: 3% 2%;
 	text-align: center
 }
 
@@ -373,30 +374,10 @@ h2.sngl:before {
 	margin: 0;
 	padding: 0;
 	margin-bottom: 30px
-	/*margin-top: 30px*/
-}
-
-.menu .filter2 {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	margin-bottom: 30px
-	/*margin-top: 30px*/
-}
-
-.menu .filter3 {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	margin-bottom: 30px
-	/*margin-top: 30px*/
+	/*margin-top: 20px*/
 }
 
 .menu .filter li {
-	display: inline-block
-}
-
-.menu .filter2 li {
 	display: inline-block
 }
 
@@ -410,38 +391,7 @@ h2.sngl:before {
 	}
 }
 
-@media only screen and (max-width:768px) {
-	.menu .filter2 li {
-		display: block
-	}
-}
-
 .menu .filter li a {
-	display: block;
-	text-decoration: none;
-	color: #fff;
-	padding: 10px 40px;
-	font-weight: bold;
-	background-color: #fff;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	border-radius: 3px;
-	color: #f6bc13;
-	font-weight: 400;
-	margin: 0 4px;
-	-webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.19);
-	-moz-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.19);
-	-ms-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.19);
-	box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.19);
-	-webkit-transition: all 300ms ease-in-out;
-	-moz-transition: all 300ms ease-in-out;
-	-ms-transition: all 300ms ease-in-out;
-	-o-transition: all 300ms ease-in-out;
-	transition: all 300ms ease-in-out
-}
-
-.menu .filter2 li a {
 	display: block;
 	text-decoration: none;
 	color: #fff;
@@ -502,22 +452,6 @@ h2.sngl:before {
 }
 
 .menu .filter li .active {
-	background-color: #f6bc13;
-	color: #fff
-}
-
-.menu .filter2 li a:hover {
-	-webkit-box-shadow: none;
-	box-shadow: none
-}
-
-@media only screen and (max-width:768px) {
-	.menu .filter2 li a {
-		margin-top: 10px
-	}
-}
-
-.menu .filter2 li .active {
 	background-color: #f6bc13;
 	color: #fff
 }
@@ -595,7 +529,7 @@ h2.sngl:before {
 
 .menu .menu-card .snacks {
 	padding: 40px 10px;
-	background: url(../img/menu-main.jpg) center center no-repeat;
+	background: url(../img/snacks.jpg) center center no-repeat;
 	background-size: cover
 }
 
@@ -1019,16 +953,21 @@ h3 {
 .contact {
 	background-color: #fff;
 	color: #837972;
-	padding: 8% 2%
+	padding: 2% 2%
 }
 
-.contact .subscribe:after {
+.subscribe {
+	padding: 2% 4%
+}
+
+.contact:after,
+.subscribe:after {
 	clear: both;
 	content: "";
 	display: block
 }
 
-.contact .subscribe input {
+.subscribe input {
 	margin-top: 15px;
 	margin-right: 10px;
 	/*height: 36px;
@@ -1091,7 +1030,7 @@ h3 {
     border-radius: 4px;
 }
 
-.contact .subscribe input[type=submit] {
+.subscribe input[type=submit] {
 	display: block;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -1113,7 +1052,7 @@ h3 {
 	transition: all 300ms ease-in-out
 }
 
-.contact .subscribe input[type=submit]:hover {
+.subscribe input[type=submit]:hover {
 	background-color: #f6bc13;
 	color: #fff
 }
