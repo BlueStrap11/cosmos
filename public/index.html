@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/main.css">
     <!-- animate min css -->
     <link rel="stylesheet" href="css/animate.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <!-- please register and switch the goole map api key to your own-->
@@ -132,7 +133,8 @@ Events</a></li>
                 <li>Snack 1<span class="price">Rs 7</span></li>
               </ul>
             </div>
-          </div> 
+          </div>
+          <div class="button_new"><a href="https://s3-eu-west-1.amazonaws.com/cosmos-jaipur/menu-cards/mansarovar.pdf">Download Menu</a></div> 
         </div>
 
         <div id="rajapark_menu" class="menu-card wow fadeInUp" style="display: none">
@@ -214,8 +216,9 @@ Events</a></li>
                 <li>Snack 2<span class="price">Rs 7</span></li>
               </ul>
             </div>
-          </div> 
-        </div>
+          </div>
+          <div class="button_new"><a href="https://s3-eu-west-1.amazonaws.com/cosmos-jaipur/menu-cards/rajapark.pdf">Download Menu</a> </div>
+        </div>  
       </div> <!-- Wrapper end -->
     </section> <!-- Menu section end -->
 
@@ -358,22 +361,29 @@ Events</a></li>
 
     <!-- Map -->
     <center>
-    <h2 class="light parallax brn sngl wow" style="padding-bottom: 20px;padding-top: 20px;margin-top: 0px;;margin-bottom: 0px;">Come Visit Us</h2></center>
-    <section class="light parallax" id="map">
-        <div class="wow fadeIn"></div>
-    </section>
+    <h2 class="light parallax brn sngl wow" style="padding-bottom: 20px;padding-top: 20px;margin-top: 0px;;margin-bottom: 0px;">Come Visit Us</h2>
     
+    <section class="light parallax" id="map"></section>
+    
+    <div class="button_new" id="dir1" style="display:none;">
+      <a href="https://www.google.co.in/maps/place/cosmos+jaipur/@26.8436974,75.7683972,20z/data=!4m8!1m2!3m1!2scosmos+jaipur!3m4!1s0x0:0xa7fdfd3acfb9dca4!8m2!3d26.8436951!4d75.7685689" target="_blank"><i class="material-icons">directions</i>  Get Directions</a>
+    </div>
+    <div class="button_new" id="dir2">
+      <a href="https://www.google.co.in/maps/place/Cosmos+Jaipur/@26.8961665,75.8220901,15.7z/data=!4m5!3m4!1s0x0:0xfbecbcd8e7ea01d5!8m2!3d26.8942531!4d75.824056" target="_blank"><i class="material-icons">directions</i>  Get Directions</a>
+    </div>
+  </center> 
+
     <!-- Contact -->
     <section class="contact">
       <div class="half">
         <ul class="location location1">
-          <li style="cursor: pointer"><a onclick="locate_mansarover()">Mansarovar</a></li>
+          <li style="cursor: pointer"><a onclick="$('#dir2').hide(); $('#dir1').show(); locate_mansarover()">Mansarovar</a></li>
         </ul>
         <div>
           <ul class="info">
             <li><i class="fa fa-phone" aria-hidden="true"></i>094140 51795</li>
             <li><i class="fa fa-envelope" aria-hidden="true"></i>cosmojaipur@gmail.com</li>
-            <li><i class="fa fa-map-marker" aria-hidden="true"></i>124/13 near IIIM Mansarovar</li>
+            <li><i class="fa fa-map-marker" aria-hidden="true"></i>124/13 Near IIIM Mansarovar</li>
             <li>Jaipur, Rajasthan 302020</li>
           </ul>
         </div>
@@ -381,7 +391,7 @@ Events</a></li>
 
       <div class="half">
         <ul class="location location2">
-          <li style="cursor: pointer"><a class="active" onclick="locate_rajapark()">Raja Park</a></li>
+          <li style="cursor: pointer"><a class="active" onclick="$('#dir1').hide(); $('#dir2').show(); locate_rajapark()">Raja Park</a></li>
         </ul>
         <div>
           <ul class="info">
