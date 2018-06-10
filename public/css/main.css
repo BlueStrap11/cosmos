@@ -304,7 +304,7 @@ h2.sngl:before {
 }
 
 .ylw {
-	color: #f6bc13
+	color: #3783bd
 }
 
 .heading {
@@ -326,7 +326,7 @@ h2.sngl:before {
 .heading h2 {
 	font-family: "Roboto", sans-serif;
 	font-weight: 700;
-	color: #f6bc13
+	color: #3783bd
 }
 
 @media only screen and (max-width:768px) {
@@ -339,12 +339,12 @@ h2.sngl:before {
 	display: inline-block;
 	padding: 10px 30px;
 	margin-top: 16px;
-	background-color: #f6bc13;
+	background-color: #3783bd;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
 	border-radius: 3px;
-	color: #410a00;
+	color: #fff;
 	text-decoration: none;
 	text-shadow: none;
 	font-weight: 700;
@@ -356,7 +356,8 @@ h2.sngl:before {
 }
 
 .btn-main:hover {
-	background-color: #e7b522
+	background-color: #fff;
+	color: #3783bd
 }
 
 .light {
@@ -402,7 +403,7 @@ h2.sngl:before {
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
 	border-radius: 3px;
-	color: #f6bc13;
+	color: #3783bd;
 	font-weight: 400;
 	margin: 0 4px;
 	-webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.19);
@@ -419,7 +420,7 @@ h2.sngl:before {
 .button_new a {
 	text-decoration: none;
 	padding: 10px 10px;
-	background-color: #f6bc13;
+	background-color: #3783bd;
 	border-radius: 3px;
 	color: #fff;
 	font-weight: 400;
@@ -430,7 +431,7 @@ h2.sngl:before {
 	padding: 10px 10px;
 	background-color: #fff;
 	border-radius: 3px;
-	color: #f6bc13;
+	color: #3783bd;
 	font-weight: 400;
 	box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.19);
 }
@@ -446,7 +447,7 @@ h2.sngl:before {
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
 	border-radius: 3px;
-	color: #f6bc13;
+	color: #3783bd;
 	font-weight: 400;
 	margin: 0 4px;
 	-webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.19);
@@ -472,7 +473,7 @@ h2.sngl:before {
 }
 
 .menu .filter li .active {
-	background-color: #f6bc13;
+	background-color: #3783bd;
 	color: #fff
 }
 
@@ -488,12 +489,12 @@ h2.sngl:before {
 }
 
 .half .location1 li .active {
-	background-color: #f6bc13;
+	background-color: #3783bd;
 	color: #fff
 }
 
 .half .location2 li .active {
-	background-color: #f6bc13;
+	background-color: #3783bd;
 	color: #fff
 }
 
@@ -577,7 +578,7 @@ h2.sngl:before {
 }
 
 .menu .menu-card .half ul .price {
-	color: #f6bc13;
+	color: #3783bd;
 	float: right
 }
 
@@ -706,13 +707,13 @@ h2.sngl:before {
 .evnt-calendar .date i {
 	margin-right: 10px;
 	font-size: 16px;
-	color: #f6bc13
+	color: #3783bd
 }
 
 .evnt-calendar .date span {
 	margin-left: 10px;
 	font-family: "Roboto", sans-serif;
-	color: #f6bc13;
+	color: #3783bd;
 	font-size: 16px;
 	font-weight: 400
 }
@@ -728,7 +729,7 @@ h2.sngl:before {
 }
 
 .evnt-calendar .arrows a {
-	color: #f6bc13;
+	color: #3783bd;
 	display: inline-block;
 	-webkit-transition: all 400ms ease-in-out;
 	-moz-transition: all 400ms ease-in-out;
@@ -793,7 +794,7 @@ h2.sngl:before {
 }
 
 .evnt-calendar .handlers li .active {
-	background-color: #f6bc13
+	background-color: #3783bd
 }
 
 .about {
@@ -826,7 +827,7 @@ h2.sngl:before {
 }
 
 .about .tel {
-	color: #f6bc13;
+	color: #3783bd;
 	font-family: "Lobster", sans-serif;
 	font-size: 26px
 }
@@ -882,7 +883,7 @@ h2.sngl:before {
 }
 
 .hppy-hr .submenu ul .price {
-	color: #f6bc13;
+	color: #3783bd;
 	float: right
 }
 
@@ -1001,9 +1002,9 @@ h3 {
 
 .form-group a {
 	display: inline-block;
-	color: #f6bc13;
+	color: #3783bd;
 	border-radius: 3px;
-	border: 1px #f6bc13 solid;
+	border: 1px #3783bd solid;
 	text-align: center;
 	font-size: 18px;
     line-height: 30px;
@@ -1014,7 +1015,7 @@ h3 {
 }
 
 .form-group a:hover {
-    background-color: #f6bc13;
+    background-color: #3783bd;
     color: #fff;
 }
 
@@ -1058,9 +1059,9 @@ h3 {
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
 	border-radius: 3px;
-	border: 1px #f6bc13 solid;
+	border: 1px #3783bd solid;
 	text-align: center;
-	color: #f6bc13;
+	color: #3783bd;
 	font-size: 18px;
 	line-height: 30px;
 	text-transform: uppercase;
@@ -1075,7 +1076,7 @@ h3 {
 }
 
 .subscribe input[type=submit]:hover {
-	background-color: #f6bc13;
+	background-color: #3783bd;
 	color: #fff
 }
 
@@ -1091,7 +1092,7 @@ h3 {
 }
 
 .contact ul i {
-	color: #f6bc13;
+	color: #3783bd;
 	display: absolute;
 	margin-left: -25px;
 	width: 25px
@@ -1131,7 +1132,7 @@ footer .social li {
 }
 
 footer .social a {
-	color: #f6bc13;
+	color: #3783bd;
 	text-decoration: none;
 	padding-left: 10px
 }
@@ -1218,8 +1219,8 @@ nav ul li a {
 }
 
 nav ul li :hover {
-	color: #f6bc13;
-	border-bottom: #f6bc13 3px solid
+	color: #3783bd;
+	border-bottom: #3783bd 3px solid
 }
 
 nav ul li i.fa {
@@ -1238,7 +1239,7 @@ nav .logo img {
 
 @media only screen and (max-width:768px) {
 	nav ul {
-		background-color: #f6bc13;
+		background-color: #3783bd;
 		margin-right: 0;
 		width: 90%;
 		margin: 0 5%;
