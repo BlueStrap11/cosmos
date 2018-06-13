@@ -419,6 +419,7 @@ h2.sngl:before {
 	transition: all 300ms ease-in-out
 }
 
+.dir_button a,
 .button_new {
 	text-decoration: none;
 	padding: 10px 10px;
@@ -428,6 +429,7 @@ h2.sngl:before {
 	font-weight: 400;
 }
 
+.dir_button a:hover,
 .button_new:hover {
 	text-decoration: none;
 	padding: 10px 10px;
