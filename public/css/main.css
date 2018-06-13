@@ -374,8 +374,6 @@ h2.sngl:before {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	margin-bottom: 30px
-	/*margin-top: 20px*/
 }
 
 .menu .filter li {
@@ -387,6 +385,9 @@ h2.sngl:before {
 }
 
 @media only screen and (max-width:768px) {
+	.menu .filter {
+		columns: 2;
+	}
 	.menu .filter li {
 		display: block
 	}
@@ -396,7 +397,7 @@ h2.sngl:before {
 	display: block;
 	text-decoration: none;
 	color: #fff;
-	padding: 10px 40px;
+	padding: 10px 25px;
 	font-weight: bold;
 	background-color: #fff;
 	-webkit-border-radius: 3px;
@@ -406,6 +407,7 @@ h2.sngl:before {
 	color: #3783bd;
 	font-weight: 400;
 	margin: 0 4px;
+	margin-bottom: 15px;
 	-webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.19);
 	-moz-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.19);
 	-ms-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.19);
@@ -468,7 +470,8 @@ h2.sngl:before {
 
 @media only screen and (max-width:768px) {
 	.menu .filter li a {
-		margin-top: 10px
+		margin-bottom: 5px;
+		padding: 10px 5px;
 	}
 }
 
@@ -499,7 +502,7 @@ h2.sngl:before {
 }
 
 .menu .menu-card {
-	margin-top: 5%;
+	margin-top: 2%;
 	background-color: #fff;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -563,7 +566,11 @@ h2.sngl:before {
 	font-size: 16px;
 	font-family: "Lobster", sans-serif;
 	font-weight: 400;
-	letter-spacing: 2px
+	letter-spacing: 2px;
+}
+
+.menu .menu-card .half ul > li:nth-child(2n+1) {
+    clear: both;
 }
 
 @media only screen and (max-width:768px) {
@@ -574,7 +581,7 @@ h2.sngl:before {
 
 .menu .menu-card .half ul li {
 	text-align: left;
-	line-height: 2.4em
+	line-height: 2.4em;
 }
 
 .menu .menu-card .half ul .price {
@@ -582,10 +589,10 @@ h2.sngl:before {
 	float: right
 }
 
-.menu .menu-card .half ul .price:before {
+/*.menu .menu-card .half ul .price:before {
 	content: "...........    ";
 	color: #ccc
-}
+}*/
 
 .full {
 	width: calc(100%);
@@ -644,12 +651,12 @@ h2.sngl:before {
 }
 
 .dark {
-	background: #1a131b;
-	background: -moz-linear-gradient(-45deg, #1a131b 0%, #3a2524 100%);
+	background: #000;
+	/*background: -moz-linear-gradient(-45deg, #1a131b 0%, #3a2524 100%);
 	background: -webkit-linear-gradient(-45deg, #1a131b 0%, #3a2524 100%);
 	background: -webkit-linear-gradient(315deg, #1a131b 0%, #3a2524 100%);
 	background: -o-linear-gradient(315deg, #1a131b 0%, #3a2524 100%);
-	background: linear-gradient(135deg, #1a131b 0%, #3a2524 100%);
+	background: linear-gradient(135deg, #1a131b 0%, #3a2524 100%);*/
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a131b', endColorstr='#3a2524', GradientType=1);
 	color: #fff;
 	padding: 3% 2%;
