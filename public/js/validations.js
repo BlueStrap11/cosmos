@@ -12,7 +12,7 @@ function CheckSubscriber(subscriber) {
       subscriberEmail: subscriber.email, 
       subscriberPhone: subscriber.phone
     },
-    url: 'http://localhost:5000/api/subscribers/one',            
+    url: window.location.origin+'/api/subscribers/one',
     success: function(data) {
         console.log('success');
         console.log(JSON.stringify(data));
@@ -37,7 +37,7 @@ function CheckSubscriberEmail(email) {
     async: false,
     type: 'GET',
     contentType: 'application/json',
-    url: 'http://localhost:5000/api/subscribers/byEmail/'+email,            
+    url: window.location.origin+'/api/subscribers/byEmail/'+email,
     success: function(data) {
         console.log('success');
         console.log(JSON.stringify(data));
@@ -61,7 +61,7 @@ function CheckSubscriberPhone(phone) {
     async: false,
     type: 'GET',
     contentType: 'application/json',
-    url: 'http://localhost:5000/api/subscribers/byPhone/'+phone,            
+    url: window.location.origin+'/api/subscribers/byPhone/'+phone,
     success: function(data) {
         console.log('success');
         console.log(JSON.stringify(data));
