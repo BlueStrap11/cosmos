@@ -101,7 +101,6 @@ module.exports = {
       if (subscriber.length != 0) {
         return res.status(404).send({
           message: 'Subscriber Already Exists',
-          found: subscriber
         });
       }
       return res.status(200).send({
@@ -122,7 +121,6 @@ module.exports = {
       if (subscriber.length != 0) {
         return res.status(404).send({
           message: 'Subscriber Already Exists',
-          found: subscriber
         });
       }
       return res.status(200).send({
@@ -143,7 +141,6 @@ module.exports = {
       if (subscriber.length != 0) {
         return res.status(404).send({
           message: 'Subscriber Already Exists',
-          found: subscriber
         });
       }
       return res.status(200).send({

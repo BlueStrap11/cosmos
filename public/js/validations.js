@@ -14,17 +14,13 @@ function CheckSubscriber(subscriber) {
     },
     url: window.location.origin+'/api/subscribers/one',
     success: function(data) {
-        console.log('success');
         console.log(JSON.stringify(data));
         bool = true;
     },
     error: function (error) {
-      console.log(error.status);
-      console.log(error.responseText);
       document.getElementById('message').setAttribute( "style", "display: inline-block" );
       document.getElementById('email1').setAttribute( "style", "border: 1px red solid" );
       document.getElementById('phone1').setAttribute( "style", "border: 1px red solid" );
-      alert("User already exists");
       bool = false;
     }
   });
@@ -39,16 +35,12 @@ function CheckSubscriberEmail(email) {
     contentType: 'application/json',
     url: window.location.origin+'/api/subscribers/byEmail/'+email,
     success: function(data) {
-        console.log('success');
         console.log(JSON.stringify(data));
         bool = true;
     },
     error: function (error) {
-      console.log(error.status);
-      console.log(error.responseText);
       document.getElementById('message').setAttribute( "style", "display: inline-block" );
       document.getElementById('email').setAttribute( "style", "border: 1px red solid" );
-      alert("User already exists");
       bool = false;
     }
   });
@@ -63,16 +55,12 @@ function CheckSubscriberPhone(phone) {
     contentType: 'application/json',
     url: window.location.origin+'/api/subscribers/byPhone/'+phone,
     success: function(data) {
-        console.log('success');
         console.log(JSON.stringify(data));
         bool = true;
     },
     error: function (error) {
-      console.log(error.status);
-      console.log(error.responseText);
       document.getElementById('message').setAttribute( "style", "display: inline-block" );
       document.getElementById('phone').setAttribute( "style", "border: 1px red solid" );
-      alert("User already exists");
       bool = false;
     }
   });
