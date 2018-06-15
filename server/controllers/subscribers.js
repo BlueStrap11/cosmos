@@ -38,31 +38,14 @@ module.exports = {
   create(req, res) {
     console.log(req.body)
     return Subscriber
-    .findAll({
-      where: {
-        [Op.or]: [{email: req.body.email}, {phone: req.body.phone}]
-      }
+    .create({
+      email: req.body.email,
+      phone: req.body.phone
     })
     .then(subscriber => {
-      if (subscriber.length != 0) {
-        return res.status(400).redirect('/existing_subscriber');
-      }
-      else {
-        return Subscriber
-          .create({
-            email: req.body.email,
-            phone: req.body.phone
-          })
-          .then(subscriber => {
-            var emailBody = WelcomeEmailData(subscriber);
-            SendWelcomeEmail(emailBody);
-            res.status(201).redirect('/thanks')
-          })
-          .catch(error => {
-            console.log(error.stack)
-            res.status(500).redirect('/errors/500')
-          });
-      }
+      var emailBody = WelcomeEmailData(subscriber);
+      SendWelcomeEmail(emailBody);
+      res.status(201).redirect('/thanks')
     })
     .catch(error => {
       console.log(error.stack)
@@ -73,61 +56,27 @@ module.exports = {
   createEmail(req, res) {
     console.log(req.body)
     return Subscriber
-    .findAll({
-      where: {
-        email: req.body.email
-      }
-    })
-    .then(subscriber => {
-      if (subscriber.length != 0) {
-        return res.status(400).redirect('/existing_subscriber');
-      }
-      else {
-        return Subscriber
-          .create({
-            email: req.body.email,
-          })
-          .then(subscriber => {
-            var emailBody = WelcomeEmailData(subscriber);
-            SendWelcomeEmail(emailBody);
-            res.status(201).redirect('/thanks')
-          })
-          .catch(error => {
-            console.log(error.stack)
-            res.status(500).redirect('/errors/500')
-          });
-      }
-    })
-    .catch(error => {
-      console.log(error.stack)
-      res.status(500).redirect('/errors/500')
-    });
+      .create({
+        email: req.body.email,
+      })
+      .then(subscriber => {
+        var emailBody = WelcomeEmailData(subscriber);
+        SendWelcomeEmail(emailBody);
+        res.status(201).redirect('/thanks')
+      })
+      .catch(error => {
+        console.log(error.stack)
+        res.status(500).redirect('/errors/500')
+      });
   },
 
   createPhone(req, res) {
     console.log(req.body)
     return Subscriber
-    .findAll({
-      where: {
-        phone: req.body.phone
-      }
+    .create({
+      phone: req.body.phone
     })
-    .then(subscriber => {
-      if (subscriber.length != 0) {
-        return res.status(400).redirect('/existing_subscriber');
-      }
-      else {
-        return Subscriber
-          .create({
-            phone: req.body.phone
-          })
-          .then(subscriber => res.status(201).redirect('/thanks'))
-          .catch(error => {
-            console.log(error.stack)
-            res.status(500).redirect('/errors/500')
-          });
-      }
-    })
+    .then(subscriber => res.status(201).redirect('/thanks'))
     .catch(error => {
       console.log(error.stack)
       res.status(500).redirect('/errors/500')
@@ -138,6 +87,69 @@ module.exports = {
   return Subscriber
     .all()
     .then(subscribers => res.status(200).send(subscribers))
+    .catch(error => res.status(400).send(error));
+  },
+
+  getSubscriberByEmail(req, res) {
+  return Subscriber
+    .findAll({
+      where: {
+        email: req.params.subscriberEmail
+      }
+    })
+    .then(subscriber => {
+      if (subscriber.length != 0) {
+        return res.status(404).send({
+          message: 'Subscriber Already Exists',
+          found: subscriber
+        });
+      }
+      return res.status(200).send({
+        message: 'Response OK'
+      });
+    })
+    .catch(error => res.status(400).send(error));
+  },
+
+  getSubscriberByPhone(req, res) {
+  return Subscriber
+    .findAll({
+      where: {
+        phone: req.params.subscriberPhone
+      }
+    })
+    .then(subscriber => {
+      if (subscriber.length != 0) {
+        return res.status(404).send({
+          message: 'Subscriber Already Exists',
+          found: subscriber
+        });
+      }
+      return res.status(200).send({
+        message: 'Response OK'
+      });
+    })
+    .catch(error => res.status(400).send(error));
+  },
+
+  getSubscriber(req, res) {
+  return Subscriber
+    .findAll({
+      where: {
+        [Op.or]: [{email: req.query.subscriberEmail}, {phone: req.query.subscriberPhone}]
+      }
+    })
+    .then(subscriber => {
+      if (subscriber.length != 0) {
+        return res.status(404).send({
+          message: 'Subscriber Already Exists',
+          found: subscriber
+        });
+      }
+      return res.status(200).send({
+        message: 'Response OK'
+      });
+    })
     .catch(error => res.status(400).send(error));
   },
 

@@ -780,10 +780,13 @@ Events</a></li>
     <section class="subscribe">
       <!-- <div > -->
         <h2 class="ylw sngl">Subscribe for updates</h2>
+        <div id="message" class="alert-danger" style="display: none">
+          <strong>Email or phone already registered. Please try again</strong>
+        </div>
         <div id="emailbox" class="half">
           <form id="email_form" class="form-control" role="form" action="/api/emailsubscribers" method="post" onsubmit="return ValidateEmail()">
             <!-- <input type="text" placeholder="Your name" required="required"> -->
-            <input id="email" type="email" name="email" placeholder="Enter Email Addresss" required="required">
+            <input id="email" type="email" name="email" placeholder="Enter Email Addresss" required="required" onfocus="HideAlert()">
             <small>We'll never share your details with anyone else.</small><br>
             <input id="email_check" type="checkbox"> I agree to receive promotional messages from Cosmos Jaipur
             <input type="submit" val="Subscribe">
