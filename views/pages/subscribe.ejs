@@ -17,20 +17,7 @@
     </div>
     <div class="hero">
       <div class="wrap">
-        <nav>
-          <div class="navi">
-          <a href="" class="toggle">Menu</a>
-          <ul>
-              <li><a href="/#menu" class="smooth"><i class="fa fa-cutlery" aria-hidden="true"></i>Menu</a></li>
-              <li><a href="/#events" class="smooth"><i class="fa fa-music" aria-hidden="true"></i>
-              Events</a></li>
-              <li><a href="/#about" class="smooth"><i class="fa fa-info" aria-hidden="true"></i>About</a></li>
-              <li><a href="/#team" class="smooth"><i class="fa fa-users" aria-hidden="true"></i>Our Team</a></li>
-              <li><a href="/#map" class="smooth"><i class="fa fa-map-marker" aria-hidden="true"></i>Visit Us</a></li>
-          </ul>
-          <a class="logo" href="index.html"><img src="img/image.jpg"></a>
-          </div>
-        </nav>
+        <% include ../partials/nav.ejs %>
       </div>
     </div>
 
@@ -89,14 +76,7 @@
       </div>
     </section>
 
-    <footer class="wow fadeIn">
-      <copy>Copyright @ Cafe Cosmos Jaipur 2016.</copy>
-      <ul class="social">
-        <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-        <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-        <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-      </ul>
-    </footer>
+    <% include ../partials/footer.ejs %>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="js/main.js"></script>
     <script src="js/validations.js"></script>
